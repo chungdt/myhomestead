@@ -26,8 +26,6 @@ Vagrantfile to build :
 
 + Run init.sh for create directories config in file config.yaml
 	`sh init.php`	
-+ Open file config.yaml setup directory for website, for data mysql,.....
-
 + vagrant up : create environment and run provision on machines
 
 + vagrant ssh :  SSH into machine
