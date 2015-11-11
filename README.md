@@ -1,8 +1,7 @@
 Contact: thanhchung2006@gmail.com
 # Introduction
 
-Script setup environment includes vagrant (centos 7, php 7, nginx) and mysql docker replication - Master/Slave
-Source code: Laravel 5
+Script setup environment includes vagrant (centos 7, php 7, nginx) and mysql docker replication - Master/Slave. Using framework laravel 5
 
 * Before RUN Vagrantfile please: 
 
@@ -42,10 +41,9 @@ Vagrantfile to build :
 + Open /etc/hosts and ADD:
 
 	`192.168.44.45  site1.dev site2.dev api.dev`
-
-+ Get source code using GIT
+	
++ Get, config source code of site1, site2, api
 	* cd /home/USERNAME/allproject: `git clone URL_git site1, site2, api`
-+ Config source code of site1, site2, api
 	* Check exits file .env if not exist is touch .env 
 	* php artisan key:generate
 	* chmod 777 -R storage/
