@@ -32,11 +32,11 @@ Vagrantfile to build :
 	* Connect on virtual machine: `sudo docker exec -it mysql mysql -uadmin -p123456`
 + Import or Export data mysql
 	* Export
-		`mysqldump -uadmin -p123456 -h192.168.44.45 --opt -d -B jhproject > /home/USERNAME/dump.sql `
-		`mysqldump -uadmin -p123456 -h192.168.44.45 --quick --single-transaction -t -n -B jhproject > /home/USERNAME/dump.sql`
+		`mysqldump -uadmin -p123456 -h192.168.44.45 --opt -d -B database_name > /home/USERNAME/dump.sql `
+		`mysqldump -uadmin -p123456 -h192.168.44.45 --quick --single-transaction -t -n -B database_name > /home/USERNAME/dump.sql`
 	* Import 
-		`mysql -uadmin -p123456 -h192.168.44.45 -e "create database jhproject";`
-		`mysql -uadmin -p123456 -h192.168.44.45 jhproject < /home/USERNAME/dump.sql`
+		`mysql -uadmin -p123456 -h192.168.44.45 -e "create database database_name";`
+		`mysql -uadmin -p123456 -h192.168.44.45 database_name < /home/USERNAME/dump.sql`
  
 + Access to docker slave MySQL container using the docker command line:
 
