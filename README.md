@@ -1,6 +1,9 @@
-@author : DuongThanhChung
-@email : thanhchung2006@gmail.com
+Contact: thanhchung2006@gmail.com
 # Introduction
+
+Script setup environment includes vagrant (centos 7, php 7, nginx) and mysql docker replication - Master/Slave
+Source code: Laravel 5
+
 * Before RUN Vagrantfile please: 
 
 + Install(Vagrant, virtualBox)
@@ -24,40 +27,27 @@ Vagrantfile to build :
 + vagrant up : create environment and run provision on machines
 
 + vagrant ssh :  SSH into machine
- 	Test:
-		php -v
-		nginx -v (-V)
 
 + Access to docker Master MySQL container using the docker command line:
 
-	A. Connect from host containing your Vagrantfile: 
-		`mysql -uadmin -p123456 -h192.168.44.45`
-	B. Connect on virtual machine
-		`sudo docker exec -it mysql mysql -uadmin -p`
-		`password: 123456`
+	* Connect from host containing your Vagrantfile: `mysql -uadmin -p123456 -h192.168.44.45`
+		
+	* Connect on virtual machine: `sudo docker exec -it mysql mysql -uadmin -p123456`
  
 + Access to docker slave MySQL container using the docker command line:
 
 	`sudo docker exec -it slave mysql -uadmin -p`
 	`password: 123456`
 
-+ open /etc/hosts and ADD 
++ Open /etc/hosts and ADD:
 
-	`192.168.44.45  site1.dev`
-	`192.168.44.45  site2.dev`
-	`192.168.44.45  api.dev`
+	`192.168.44.45  site1.dev site2.dev api.dev`
 
-+ cd /home/USERNAME/allproject
-Remove directory site1, site2 and api
-	git clone URL_git site1
-	git clone URL_git site2
-	git clone URL_git api
++ Get source code using GIT
+	* cd /home/USERNAME/allproject: `git clone URL_git site1, site2, api`
++ Config source code of site1, site2, api
+	* Check exits file .env if not exist is touch .env 
+	* php artisan key:generate
+	* chmod 777 -R storage/
+	* chmod 777 -R bootstrap/
 
-	cd /home/USERNAME/allproject/hawaiioption
-		+ Check exits file .env if not exist is touch .env
-		+ php artisan key:generate
-		+ chmod 777 -R storage/
-		+ chmod 777 -R bootstrap/
-	The same for superstar and api
-# NOTE
-+ 192.168.44.45 : ip for machines add host
