@@ -35,8 +35,12 @@ Vagrantfile to build :
 
 + Access to docker Master MySQL container using the docker command line:
 
-	`sudo docker exec -it mysql mysql -uadmin -p`
-	`password: 123456`
+	A. Connect from host containing your Vagrantfile: 
+		`mysql -uadmin -p123456 -h192.168.44.45`
+	B. Connect on virtual machine
+		`sudo docker exec -it mysql mysql -uadmin -p`
+		`password: 123456`
+ 
 + Access to docker slave MySQL container using the docker command line:
 
 	`sudo docker exec -it slave mysql -uadmin -p`
