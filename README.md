@@ -1,15 +1,13 @@
 Contact: thanhchung2006@gmail.com
 # Introduction
 
-Script setup environment includes vagrant (centos 7, php 7, nginx) and mysql docker replication - Master/Slave. Using framework laravel 5
+Script setup a development environment using Docker with Vagrant includes (centos 7, php 7, nginx, mysql docker replication - Master/Slave). This script can run multiple sites (site1, site2, api...)
 
 * Before RUN Vagrantfile please: 
 
 + Install(Vagrant, virtualBox)
-
-	https://www.vagrantup.com/downloads.html
-	https://www.virtualbox.org/wiki/Downloads
-
+	* https://www.vagrantup.com/downloads.html
+	* https://www.virtualbox.org/wiki/Downloads
 + Stop port 3306 if exist
 
 Vagrantfile to build : 
@@ -42,7 +40,7 @@ Vagrantfile to build :
 
 	`192.168.44.45  site1.dev site2.dev api.dev`
 	
-+ Get, config source code of site1, site2, api
++ Get, config source code(laravel5 framework) of site1, site2, api
 	* cd /home/USERNAME/allproject: `git clone URL_git site1, site2, api`
 	* Check exits file .env if not exist is touch .env 
 	* php artisan key:generate
