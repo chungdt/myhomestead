@@ -1,0 +1,29 @@
+sudo gedit .shh/config
+	-move private_Key t /home/USERNAME/.ssh/
+	(mv /path/private_Key/home/USERNAME/.ssh/)
+chmod 600 file_private_Key
+open sudo gedit .ssh/config
+Host T
+    HostName        A.B.110.178
+    IdentityFile    ~/.ssh/file_private_Key
+    User            www
+---------------------------------------------
+$ cd
+$ cd .ssh/
+$ ssh-keygen -t rsa -C comment -f backlog
+$  ll | grep backlog
+-rw-------   1 kenichiro  staff   1.6K  9  3 12:47 backlog (←create)
+-rw-r--r--   1 kenichiro  staff   389B  9  3 12:47 backlog.pub (←create)
+$ cat backlog.pub
+ssh-rsa XXXXXXXXXXXXXXXXXXXXXXX comment (←copy)
+
+https://psd.backlog.jp/EditUserSshKey.action  (Paste)
+
+$ vi .ssh/config
+Host psd.git.backlog.jp
+     HostName        psd.git.backlog.jp
+     IdentityFile    ~/.ssh/backlog
+     User            NAME of YOU
+
+git clone https://.........git
+---------------------------------------------
