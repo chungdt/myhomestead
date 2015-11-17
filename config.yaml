@@ -12,10 +12,10 @@ folders:
     - map: ~/allproject/datamysql/mysql02
       to: /var/lib/mysql02
 sites:
-    - map: superstar.dev
-      to: /home/vagrant/JH/superstar/public
-    - map: hawaiioption.dev
-      to: /home/vagrant/JH/hawaiioption/public
+    - map: site1.dev
+      to: /home/vagrant/JH/site1/public
+    - map: site2.dev
+      to: /home/vagrant/JH/site2/public
     - map: api.dev
       to: /home/vagrant/JH/api/public
 variables:
